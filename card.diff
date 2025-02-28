@@ -1,0 +1,15 @@
+diff --git a/selfdrive/car/card.py b/selfdrive/car/card.py
+index f00cbe55e..29232b0a2 100755
+--- a/selfdrive/car/card.py
++++ b/selfdrive/car/card.py
+@@ -108,6 +108,10 @@ class Car:
+       self.CI, self.CP = CI, CI.CP
+       self.RI = RI
+ 
++    if True:
++      from opendbc.car.radar_interface import RadarInterface
++      self.RI = RadarInterface(self.CI.CP)
++
+     # set alternative experiences from parameters
+     disengage_on_accelerator = self.params.get_bool("DisengageOnAccelerator")
+     self.CP.alternativeExperience = 0
