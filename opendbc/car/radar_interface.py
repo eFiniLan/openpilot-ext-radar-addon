@@ -24,14 +24,14 @@ BUS = 1
 class RadarConfig:
     DREL_OFFSET = -1.2
     MAX_COUNT = 3  # 180 ms
-    MAX_OBJECTS = 32
+    MAX_OBJECTS = 50
 
 def _create_radar_parser():
     messages = [("Status", 16.7), ("ObjectData", 0)]
     return CANParser('u_radar', messages, BUS)
 
 def _create_radar_object_parser():
-    messages = [(f"ObjectData_{i}", 0) for i in range(1, RadarConfig.MAX_OBJECTS+1)]
+    messages = [(f"ObjectData_{i}", 0) for i in range(RadarConfig.MAX_OBJECTS)]
     return CANParser('u_radar', messages, BUS)
 
 
@@ -41,7 +41,7 @@ class RadarInterface(RadarInterfaceBase):
 
         self.updated_messages = set()
         # Pre-allocate objects list with template
-        self.objs = [{k: v for k, v in OBJ_TEMPLATE.items()} for _ in range(1, RadarConfig.MAX_OBJECTS)]
+        self.objs = [{k: v for k, v in OBJ_TEMPLATE.items()} for _ in range(RadarConfig.MAX_OBJECTS)]
 
         self._radar_points_cache = {}
         self.rcp = _create_radar_parser()
@@ -57,10 +57,10 @@ class RadarInterface(RadarInterfaceBase):
         new_list_append = new_list.append  # Local reference for faster access
 
         records = can_strings[0][1]
-        id_num = 1
+        id_num = 0
 
         for record in records:
-            if id_num > RadarConfig.MAX_OBJECTS:
+            if id_num >= RadarConfig.MAX_OBJECTS:
                 break
 
             if record[0] == 0x60B:
@@ -115,11 +115,9 @@ class RadarInterface(RadarInterfaceBase):
             self.rop.update_strings(parsable_can_string)
 
             # Batch update objects
-            print(size)
-            for i in range(1, size + 1):
+            for i in range(size):
                 cpt = self.rop.vl[f'ObjectData_{i}']
-                track_id = int(cpt['ID'])
-                obj = self.objs[track_id]
+                obj = self.objs[i]
 
                 # Update object properties in batch
                 obj.update({
