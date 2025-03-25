@@ -16,7 +16,7 @@ Before installing this addon, ensure you have the following:
 - A car that already has openpilot installed.
 - The car must support openpilot longitudinal control.
 - The car does not have radar support. (e.g. Nissan, Volkswagen, Mazda, Subaru...)
-- A comma 3 or 3X device with the **OLD comma power** (which supports sending and receiving CAN messages via the OBD2 port).
+- A comma 3 or 3X device.
 - A comma 3 or 3X running **openpilot version 0.9.8 or above**.
 
 ## Bill of Materials (BOM)
@@ -28,8 +28,7 @@ Before installing this addon, ensure you have the following:
    * [Quick Release Buckle Mount](https://www.aliexpress.com/item/1005006410768280.html), ~$1.0 USD
    * [Short Screw](https://www.aliexpress.com/item/32819832442.html), ~$1.2 USD
    * [Flat Adhesive Mount](https://www.aliexpress.com/item/1005006441304068.html), ~$0.99 USD
-3. [Male OBD2 Cable w/ Open Pins](https://www.aliexpress.com/item/1005004651634446.html), ~$3.00 USD
-4. [4 Pins Phoenix Type Connector](https://www.aliexpress.com/item/1005006554550534.html), ~$2.00 USD
+3. [4 Pins Phoenix Type Connector](https://www.aliexpress.com/item/1005006554550534.html), ~$2.00 USD
 
 ## Installation
 
@@ -75,13 +74,6 @@ cd /data/openpilot/opendbc/dbc/ && python u_radar_config.py
 #### opendbc/car/radar_interface.py
 Upload to /data/openpilot/opendbc/car/radar_interface.py
 
-#### Apply panda change
-1. upload panda.diff to /data
-2. Apply changes:
-```bash
-cd /data/openpilot/panda && git apply ../../panda.diff
-```
-
 #### Apply card.py change
 1. upload panda.diff to /data
 2. Apply changes:
@@ -91,8 +83,7 @@ cd /data/openpilot/ && git apply ../card.diff
 
 
 ## Notes
-1. **Mounting Bracket**: The provided mounting bracket is designed as a temporary solution to allow easy adjustment and removal of the radar unit.
-2. **Power Management**: Due to the nature of the OBD2 port, it will constantly provide power to the radar. To prevent battery drain, it is recommended to add a power switch to disconnect the radar when not in use.
+**Mounting Bracket**: The provided mounting bracket is designed as a temporary solution to allow easy adjustment and removal of the radar unit.
 
 ## Contributing
 Contributions are welcome! Please submit issues or pull requests to improve functionality.
