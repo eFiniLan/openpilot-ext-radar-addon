@@ -110,8 +110,6 @@ class RadarInterface(RadarInterfaceBase):
         # dispatch
         if 0x60A in self.updated_messages:
             ret = RadarData()
-            # do not check can_valid
-            ret.errors = []
 
             ret.points = list(self.pts.values()) if self.pts else []
 
