@@ -81,9 +81,9 @@ cd /data/openpilot/ && git apply ../card.diff
 
 
 ## Notes
-**Mounting Bracket**: The provided mounting bracket is designed as a temporary solution to allow easy adjustment and removal of the radar unit.
-**CAN Message Conflict**: This proof of concept may trigger errors due to conflicts. A CAN filter or gateway can resolve them.
-**Power Overdrawn**: The radar requires more than 0.2A; connect to OBD2 if the current source can't supply enough power.
+* **Mounting Bracket**: The provided mounting bracket is designed as a temporary solution to allow easy adjustment and removal of the radar unit.
+* **CAN Message Conflict**: This proof of concept may trigger errors due to conflicts. A CAN filter or gateway can resolve them.
+* **Power Overdrawn**: The radar requires more than 0.2A; connect to OBD2 if the current source can't supply enough power.
 
 ## Contributing
 Contributions are welcome! Please submit issues or pull requests to improve functionality.
