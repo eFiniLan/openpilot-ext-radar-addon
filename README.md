@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <td><a href="https://youtu.be/NmBfgOanCyk"><img src="https://img.youtube.com/vi/UFTRnajgVLs/hqdefault.jpg"></a></td>
+    <td><a href="https://youtu.be/UFTRnajgVLs"><img src="https://img.youtube.com/vi/UFTRnajgVLs/hqdefault.jpg"></a></td>
     <td><a href="https://youtu.be/DK-5TdNM60k"><img src="https://img.youtube.com/vi/DK-5TdNM60k/hqdefault.jpg"></a></td>
   </tr>
 </table>
