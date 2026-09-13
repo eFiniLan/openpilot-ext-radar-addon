@@ -25,7 +25,7 @@ Before installing this addon, ensure you have the following:
 - A comma 3 or 3X device running **openpilot version 0.9.8 or above**.
 
 ## Bill of Materials (BOM)
-1. [Radar](https://www.aliexpress.com/item/1005006713716767.html), ~$236 USD
+1. [Radar](https://www.aliexpress.com/item/1005011545289839.html), ~$280 USD (or search "Nanoradar MR76")
 2. GoPro Accessories:
    * [Cell Phone Holder](https://www.aliexpress.com/item/1005007539814670.html), ~$4.0 USD
    * [1/4 inch Mount](https://www.aliexpress.com/item/1005006410768280.html), ~$1.0 USD
